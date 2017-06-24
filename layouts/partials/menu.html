@@ -11,7 +11,7 @@
 {{ range $taxonomyname, $taxonomy := $.Site.Taxonomies }}
 {{ if eq $taxonomyname "categories" }}
 {{ range $categoryName, $pages := $taxonomy }}
-  <li><a  class="{{ if (or (in $currentParams.Categories $categoryName) (and (eq $kind "taxonomy") (eq $data.Term $categoryName))) }}active{{ end }}"href="{{ $taxonomyname | relLangURL}}/{{ $categoryName | urlize }}">{{ $categoryName }}</a>
+  <li><a  class="{{ if (or (in $currentParams.Categories $categoryName) (and (eq $kind "taxonomy") (eq $data.Term $categoryName))) }}active{{ end }}"href="{{ $taxonomyname | relLangURL}}/{{ $categoryName | urlize }}">{{ T $categoryName | default $categoryName }}</a>
   </li>
 {{ end -}}
 {{ end -}}
