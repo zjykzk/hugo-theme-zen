@@ -16,7 +16,7 @@
 {{ end -}}
 {{ end -}}
 {{ end }}
-<li><a class="{{  if eq $currentID .UniqueID }}active{{ end }}" href="{{ "post/about" | relLangURL }}">{{ i18n "About" | default "About" -}}</a></li>
+<li><a class="{{  if in $currentParams.Tags "about" }}active{{ end }}" href="{{ "post/about" | relLangURL }}">{{ i18n "About" | default "About" -}}</a></li>
 </ul>
 </nav>
 </div>
