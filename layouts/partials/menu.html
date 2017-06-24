@@ -1,13 +1,20 @@
 {{ $currentSection := .Section }}
 {{ $currentID := .UniqueID }}
+{{ $currentParams := .Params }}
+{{ $kind := .Kind }}
+{{ $data := .Data }}
 <div class="layout-swap__top layout-3col__full">
 <nav class="main-menu" role="navigation">
 <h2 class="visually-hidden">Main menu</h2>
 <ul class="navbar clearfix">
 <li><a class="{{ if .IsHome }}active{{ end }}" href="/">{{ i18n "menu_home" }}</a></li>
 {{ range $taxonomyname, $taxonomy := $.Site.Taxonomies }}
-  <li><a class="{{ if eq $currentID .UniqueID }}active{{ end }}" href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+{{ if eq $taxonomyname "categories" }}
+{{ range $categoryName, $pages := $taxonomy }}
+  <li><a  class="{{ if (or (in $currentParams.Categories $categoryName) (and (eq $kind "taxonomy") (eq $data.Term $categoryName))) }}active{{ end }}"href="{{ $taxonomyname | relLangURL}}/{{ $categoryName | urlize }}">{{ $categoryName }}</a>
   </li>
+{{ end -}}
+{{ end -}}
 {{ end }}
 <li><a class="{{  if eq $currentID .UniqueID }}active{{ end }}" href="{{ "post/about" | relLangURL }}">{{ i18n "About" | default "About" -}}</a></li>
 </ul>
