@@ -7,9 +7,17 @@
 {{ define "main" -}}
 <main class="{{ if $.Param "sidebar" | default true }}layout-3col__left-content{{ else }}layout-3col__full{{ end }}" role="main">
 <article class="{{ with .Section }}section-{{ . | urlize }} {{ end }}single-view">
+{{ if .IsHome }}
+{{ $paginator := .Paginate (.Pages) -}}
+{{ range $paginator.Pages -}}
+{{ .Render "summary"}}
+{{ end -}}
+{{ partial "pagination.html" . }}
+{{ else }}
 <div class="content">
 {{ .Content }}
 </div>
+{{ end -}}
 </article>
 </main>
 {{ partial "menu.html" . -}}
