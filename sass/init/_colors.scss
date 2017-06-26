@@ -26,6 +26,7 @@ $chroma: add-colors((
   red:                    #c00,
   green:                  #43a808,
   yellow:                 #fd0,
+  soft:                   #F5F5D5,
 ));
 
 // Define color names for functional uses.
@@ -51,7 +52,7 @@ $chroma: add-colors('functional', (
   autocomplete-select:    'white',
   autocomplete-select-bg: 'blue',
 
-  body-bg:                'white',
+  body-bg:                'soft',
   header-bg:              'brand',
   backdrop:               'grey-extra-light',
 
