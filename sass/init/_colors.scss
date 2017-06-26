@@ -27,6 +27,7 @@ $chroma: add-colors((
   green:                  #43a808,
   yellow:                 #fd0,
   soft:                   #F5F5D5,
+  code-bg:                #EFF2DF
 ));
 
 // Define color names for functional uses.
@@ -37,7 +38,7 @@ $chroma: add-colors('functional', (
   brand-alt:              'grey',
   brand-dark:             'grey-dark',
   text:                   'black',
-  text-bg:                'soft',
+  text-bg:                'code-bg',
 
   link:                   'black',
   link-visited:           'black',
