@@ -104,6 +104,8 @@ article {
   code {
     @include type-layout(s, 1);
     word-wrap: break-word;
+    border-radius: 3px;
+    background-color: color(text-bg);
   }
 
   pre {
@@ -119,6 +121,9 @@ article {
     & > code {
       display: inline-block;
       white-space: pre;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
     }
   }
 
