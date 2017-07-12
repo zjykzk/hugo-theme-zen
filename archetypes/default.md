@@ -1,7 +1,10 @@
----
-title: ""
-author: ""
-slug: ""
-tags: ["", ""]
-
----
++++
+author = "zenk"
+slug = ""
+tags = []
+draft = true
+categories=[]
+title=""
+description=""
+date="{{ .Date }}"
++++
