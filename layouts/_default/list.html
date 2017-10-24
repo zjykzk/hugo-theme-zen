@@ -7,7 +7,7 @@
 <h1 class="title">{{ T .Title | default .Title }}</h1>
 {{ $paginator := .Paginate (.Data.Pages) -}}
 {{ range $paginator.Pages -}}
-{{ .Render "summary"}}
+{{ .Render "desc" }}
 {{ end -}}
 
 {{ partial "pagination.html" . }}

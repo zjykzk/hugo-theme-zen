@@ -10,7 +10,7 @@
 {{ if .IsHome }}
 {{ $paginator := .Paginate (.Pages) -}}
 {{ range $paginator.Pages -}}
-{{ .Render "summary"}}
+{{ .Render "desc"}}
 {{ end -}}
 {{ partial "pagination.html" . }}
 {{ else }}
