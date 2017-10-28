@@ -1,21 +1,22 @@
 # A Hugo theme based on the Drupal zen base theme
 
-A very popular base theme for Drupal is [Zen](https://www.drupal.org/project/zen) by [JohnAlbin](https://www.drupal.org/u/johnalbin).
+A very popular base theme for Drupal is [Zen](https://www.drupal.org/project/zen) by [JohnAlbin](https://www.drupal.org/u/johnalbin). This is a port of that theme for [Hugo :: A fast and modern static website engine](https://gohugo.io/).
 
-This is a port of that theme for [Hugo :: A fast and modern static website engine](https://gohugo.io/).
+This version uses a modern CSS grid layout. Recent versions of all the mayor browsers support it, see [Can I use css grid](http://caniuse.com/#search=grid).
 
+The [old branch](https://github.com/frjo/hugo-theme-zen/tree/old) has the original Zen grid system that uses floats and clearfixes like they did in the stone age.
 
 ## Features
 
 * HTML5
 * Responsive design
-* Zen grids
+* CSS grid
 * Normalize CSS
 * libSass
 * Gulp.js
 * Minify css
-* jQuery 2
-* Slicknav mobile menu
+* jQuery 3
+* A mobile menu
 * Search with DuckDuckGo
 * Analytics with Piwik
 
@@ -30,6 +31,11 @@ This is a port of that theme for [Hugo :: A fast and modern static website engin
 ![screenshot](https://raw.githubusercontent.com/frjo/hugo-theme-zen/master/images/tn_mobil.png)
 
 
+## The mobile menu
+
+![screenshot](https://raw.githubusercontent.com/frjo/hugo-theme-zen/master/images/tn_mobil_menu.png)
+
+
 ## Installation
 
 ```
@@ -37,7 +43,7 @@ $ cd themes
 $ git clone https://github.com/frjo/hugo-theme-zen.git zen
 ```
 
-[Hugo - Installing Hugo](http://gohugo.io/overview/installing/)
+[Hugo - Installing Hugo](https://gohugo.io/overview/installing/)
 
 
 ## config.yaml example
@@ -61,16 +67,24 @@ params:
   footer: "A [example.org](https://example.org/) production."
   icon: ""              # Relative path to icon in json feed, no leading slash.
   jquery: true          # Add jQuery
+  languageDir: ""       # Set ltr or rtl, defaults to ltr.
   logo: false           # Turn off the logo.
+  mobileMenu: true      # Turn on a mobile menu on small screens.
   piwikSiteId:          # Piwik site id
   piwikTrackerUrl: ""   # Piwik url, schemaless and no slash on end (example.com/piwik).
   poweredby: true       # Show powered by hugo in footer
   search: true          # Site search with DuckDuckGo.
   searchSize: 20        # Search field size, default 20.
   sidebar: true         # Show a sidebar to the right
-  slicknav: true        # Activates SlickNav, a nice mobile menu.
   submitted: true       # Show author and date information for a post.
 ```
+
+
+## Dates
+
+If "lastmod" is set in the frontmatter on a post that value will be used in the "submitted" section. If not "date" is used.
+
+With "lastmod" set a date section will also appear at the bottom of post telling the reader the created and modification dates.
 
 
 ## Shortcodes

@@ -11,6 +11,35 @@ pre {
   @include margin(.75 0);
 }
 
+/* Page */
+
+body {
+  background-color: color(backdrop);
+}
+
+.page {
+  background-color: color(body-bg);
+}
+
+.header {
+  padding-top: $zen-gutters / 2;
+
+  @include respond-to(s) {
+    padding-top: $zen-gutters;
+  }
+}
+
+.footer {
+  @include margin-top(1.5);
+  @include padding(.5 0);
+  text-align: center;
+  border-top: 2px solid color(brand);
+
+  p {
+    margin: 0;
+  }
+}
+
 /* Apply smaller text to blocks, footer etc. */
 
 th,
@@ -25,6 +54,7 @@ figcaption {
 }
 
 article > header,
+.content-dates,
 .footer {
   @include type-layout(xs, 1);
 
@@ -43,6 +73,7 @@ nav,
 label,
 legend,
 article > header,
+.content-dates,
 .header,
 .footer {
   @include typeface(headings);
@@ -102,15 +133,19 @@ article {
   }
 
   code {
-    @include type-layout(s, 1);
+    @include type-layout(xs, 1);
     word-wrap: break-word;
     border-radius: 3px;
     background-color: color(text-bg);
     color: color(red);
+
+    @include respond-to(xxl) {
+      @include type-layout(xs-2, 1);
+    }
   }
 
   pre {
-    color: color(headings);
+    color: color(code);
     border-radius: 3px;
     padding: 5px;
     border: 1px solid color(border);
@@ -118,6 +153,11 @@ article {
     overflow: auto;
     max-height: 250px;
     //max-width: 550px;
+    max-width: 90vw;
+
+    @include respond-to(s) {
+      max-width: $max-content-width;
+    }
 
     & > code {
       display: inline-block;
@@ -129,6 +169,10 @@ article {
     }
   }
 
+  .content-dates {
+    color: color('grey');
+    text-align: right;
+  }
 }
 
 .title-submitted {
@@ -179,48 +223,10 @@ figcaption {
   }
 }
 
-/* Page */
-
-body {
-  background-color: color(backdrop);
-}
-
-.layout-center {
-  background-color: color(body-bg);
-}
-
-.header {
-  padding-top: $zen-gutters / 2;
-
-  @include respond-to(m) {
-    padding-top: $zen-gutters;
-  }
-
-  &__logo {
-    @include respond-to(s) {
-      float: left;
-    }
-  }
-
-  &__site-name {
-    @include respond-to(s) {
-      float: left;
-    }
-  }
-
-  &__region {
-    @include respond-to(s) {
-      float: right;
-      clear: none;
-    }
-  }
-}
-
 /* Navigation */
 
 .main-menu {
   @include margin-top(.5);
-  @include margin-bottom(.5);
   outline: 0;
 
   li {
@@ -253,17 +259,6 @@ body {
   text-decoration: none;
 }
 
-.footer {
-  @include margin-top(1.5);
-  @include padding(.5 0);
-  text-align: center;
-  border-top: 2px solid color(brand);
-
-  p {
-    margin: 0;
-  }
-}
-
 /* Messages */
 
 .message {
@@ -294,7 +289,7 @@ body {
 /* Search */
 
 .search-form {
-  @include padding-top(.5);
+  @include padding(.5 0);
 }
 
 .search-text {
@@ -307,7 +302,7 @@ body {
   input,
   textarea {
     @include margin-bottom(.75);
-    width: 95%;
+    width: 92%;
 
     &:required+span::after {
       content: ' *';
@@ -340,42 +335,4 @@ body {
       background-color: color(error-bg);
     }
   }
-}
-
-/* Print. */
-
-aside,
-nav,
-footer {
-  @extend %print-none;
-}
-
-@media print {
-  body,
-  .layout-center {
-    background-color: color(white);
-  }
-
-  .layout-swap {
-    padding-top: 0;
-  }
-
-  [role='main'] {
-    width: 100%;
-  }
-
-  .layout-swap__top {
-    border-bottom: 0;
-  }
-
-  /* Zen overrides */
-  :link,
-  :visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: '';
-  }
-
 }

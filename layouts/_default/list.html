@@ -3,8 +3,8 @@
 {{ end }}
 
 {{ define "main" -}}
-<main class="{{ if $.Param "sidebar" | default true }}layout-3col__left-content{{ else }}layout-3col__full{{ end }}" role="main">
-<h1 class="title">{{ T .Title | default .Title }}</h1>
+<main class="main layout__main" role="main">
+<h1 class="title">{{ .Title }}</h1>
 {{ $paginator := .Paginate (.Data.Pages) -}}
 {{ range $paginator.Pages -}}
 {{ .Render "desc" }}
@@ -12,7 +12,4 @@
 
 {{ partial "pagination.html" . }}
 </main>
-
-{{ partial "menu.html" . -}}
-{{ if $.Param "sidebar" | default true }}{{ partial "sidebar.html" . -}}{{ end }}
 {{ end }}
