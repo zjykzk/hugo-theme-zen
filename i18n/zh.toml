@@ -1,23 +1,32 @@
+[menu_title]
+other = "主菜单"
+
 [menu_home]
-other = "Home"
+other = "首页"
 
 [pager_next]
-other = "Next"
+other = "下一页"
 
 [pager_prev]
-other = "Prev"
+other = "上一页"
 
 [taxo_tags]
 other = "Tags"
 
 [search_placeholder]
-other = "Search"
+other = "搜索"
 
 [search_title]
-other = "Enter the terms you wish to search for."
+other = "搜索"
 
 [cs]
 other = "计算机"
 
 [Cs]
 other = "计算机"
+
+[About]
+other = "关于"
+
+[Home]
+other = "首页"
