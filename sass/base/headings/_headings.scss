@@ -10,6 +10,10 @@
 
 // Address variable `h1` font-size and margin within `section` and `article`
 // contexts in Firefox 4+, Safari, and Chrome.
+.content h2 {
+  border-bottom: 1px solid #d3d3d3;
+}
+
 h1,
 %h1 {
   // Set the font-size and line-height while keeping a proper vertical rhythm.
