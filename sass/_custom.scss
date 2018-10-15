@@ -6,10 +6,8 @@ body {
     font-family: 'Lucida Grande', Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
 }
 
-table {
-    border: 1px solid #ddd;
-}
-
-tr {
+table,
+tr,
+td {
     border: 1px solid #ddd;
 }
