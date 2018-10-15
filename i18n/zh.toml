@@ -45,3 +45,12 @@ other = "编程"
 
 [dist]
 other = "分布式"
+
+[arch]
+other = "架构"
+
+[design-pattern]
+other = "设计模式"
+
+[algo]
+other = "算法"
