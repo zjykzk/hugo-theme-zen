@@ -2,7 +2,7 @@
 {{ i18n "taxo_tags" }}:
 <ul>
 {{ range .Params.tags -}}
-<li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+<li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ i18n . | default .}}</a></li>
 {{ end -}}
 </ul>
 </div>

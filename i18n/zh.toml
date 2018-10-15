@@ -39,3 +39,9 @@ other = "佛法"
 
 [design]
 other = "设计"
+
+[program]
+other = "编程"
+
+[dist]
+other = "分布式"
